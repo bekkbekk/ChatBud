@@ -65,8 +65,8 @@
                             <?php echo $row2['f_name'] ?>?
                         </p>
                         <div class="buttons-container">
-                            <button class="btn-cancel">Cancel</button>
-                            <form method="GET"><button class="btn-sign-out" name="delete"
+                            <button class="btn-cancel-del">Cancel</button>
+                            <form method="POST"><button class="btn-sign-out" name="delete"
                                     value="<?php echo $chatId ?>">Delete</button>
                             </form>
                         </div>
@@ -85,22 +85,39 @@
 <script>
     window.addEventListener('load', () => {
         // confirm dialog to delete
-        const confirmDialog = document.querySelector('.delete-container');
+        const confirmDialogs = document.querySelectorAll('.delete-container');
         const deleteBtns = document.querySelectorAll('.btn-delete');
-        const cancelBtns = document.querySelectorAll('.btn-cancel');
+        const cancelBtns = document.querySelectorAll('.btn-cancel-del');
 
-        deleteBtns.forEach(del => {
+        // deleteBtns.forEach(del => {
+        //     del.addEventListener('click', (e) => {
+        //         e.stopPropagation();
+        //         confirmDialog.style.display = 'flex';
+        //     })
+        // });
+
+        for (let i = 0; i < deleteBtns.length; i++) {
+            let del = deleteBtns[i];
             del.addEventListener('click', (e) => {
                 e.stopPropagation();
-                confirmDialog.style.display = 'flex';
+                confirmDialogs[i].style.display = 'flex';
             })
-        });
+        }
 
-        cancelBtns.forEach(cancel => {
+        // cancelBtns.forEach(cancel => {
+        //     cancel.addEventListener('click', () => {
+        //         confirmDialog.style.display = 'none';
+        //     })
+        // });
+
+        for (let i = 0; i < cancelBtns.length; i++) {
+            let cancel = cancelBtns[i];
             cancel.addEventListener('click', () => {
-                confirmDialog.style.display = 'none';
+                confirmDialogs[i].style.display = 'none';
             })
-        });
+        }
+
+
 
     });
 </script>

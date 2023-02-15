@@ -187,7 +187,7 @@ body {
 
 .delete-container .confirm-delete .buttons-container button {
     width: 45%;
-    color: #000;
+    color: #fff;
     max-width: 130px;
     padding: 5px 10px;
     font-size: 20px;
@@ -197,8 +197,8 @@ body {
     transition: 0.2s ease;
 }
 
-.delete-container .confirm-delete .buttons-container .btn-cancel {
-    background-color: #AB9696;
+.delete-container .confirm-delete .buttons-container .btn-cancel-del {
+    background-color: #1c1c1e;
     margin-right: 10px;
 }
 
@@ -207,8 +207,8 @@ body {
     width: 100%;
 }
 
-.delete-container .confirm-delete .buttons-container .btn-cancel:hover {
-    background-color: #ccbfbf;
+.delete-container .confirm-delete .buttons-container .btn-cancel-del:hover {
+    background-color: #323234;
 }
 
 .delete-container .confirm-delete .buttons-container .btn-sign-out:hover {
