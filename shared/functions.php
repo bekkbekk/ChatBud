@@ -49,7 +49,9 @@ function convertDate($date_time)
     $array = explode(' ', $date_time);
     $date_string = $array[0];
     $time_string = $array[1];
+    date_default_timezone_set('Asia/Manila');
     $date = date("Y-m-d");
+    // echo $date;
 
     if ($date_string == $date) {
         return date("g:i A", strtotime($time_string));
