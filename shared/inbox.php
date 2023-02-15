@@ -89,13 +89,6 @@
         const deleteBtns = document.querySelectorAll('.btn-delete');
         const cancelBtns = document.querySelectorAll('.btn-cancel-del');
 
-        // deleteBtns.forEach(del => {
-        //     del.addEventListener('click', (e) => {
-        //         e.stopPropagation();
-        //         confirmDialog.style.display = 'flex';
-        //     })
-        // });
-
         for (let i = 0; i < deleteBtns.length; i++) {
             let del = deleteBtns[i];
             del.addEventListener('click', (e) => {
@@ -103,12 +96,6 @@
                 confirmDialogs[i].style.display = 'flex';
             })
         }
-
-        // cancelBtns.forEach(cancel => {
-        //     cancel.addEventListener('click', () => {
-        //         confirmDialog.style.display = 'none';
-        //     })
-        // });
 
         for (let i = 0; i < cancelBtns.length; i++) {
             let cancel = cancelBtns[i];

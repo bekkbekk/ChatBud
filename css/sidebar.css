@@ -74,6 +74,10 @@
 }
 
 .sidebar .icons:hover {
+    color: #888888;
+}
+
+.sidebar .active .icons:hover {
     color: #000;
 }
 

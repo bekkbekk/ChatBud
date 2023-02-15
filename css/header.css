@@ -179,7 +179,7 @@ header .hamburger.is-active .bar {
 
 .black-container .confirm-dialog .buttons-container button {
     width: 45%;
-    color: #000;
+    color: #fff;
     max-width: 130px;
     padding: 5px 10px;
     font-size: 20px;
@@ -190,7 +190,7 @@ header .hamburger.is-active .bar {
 }
 
 .black-container .confirm-dialog .buttons-container .btn-cancel {
-    background-color: #AB9696;
+    background-color: #1c1c1e;
     margin-right: 10px;
 }
 
@@ -199,7 +199,7 @@ header .hamburger.is-active .bar {
 }
 
 .black-container .confirm-dialog .buttons-container .btn-cancel:hover {
-    background-color: #ccbfbf;
+    background-color: #323234;
 }
 
 .black-container .confirm-dialog .buttons-container .btn-sign-out:hover {
