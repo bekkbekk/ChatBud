@@ -1,0 +1,228 @@
+:root {
+    --brown: #B88855;
+    --light-brown: #F6D9A8;
+    --dark-brown: #82410D;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+input,
+button {
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url('../images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.last-message-container {
+    height: calc(100vh - 75px);
+    overflow-y: auto;
+}
+
+.inbox .container {
+    /* display: flex;
+
+    align-items: center; */
+    background: #FFFFFF;
+    border: 1px solid #ddd;
+    padding: 1.2rem;
+    margin-left: 80px;
+    width: calc(100% - 80px);
+    padding-left: 0;
+    cursor: pointer;
+
+    transition: 0.4s ease;
+}
+
+.inbox .container .detail-message {
+    display: flex;
+    align-items: center;
+}
+
+.inbox .container:hover {
+    background-color: var(--light-brown);
+}
+
+.inbox .container .delete-icon {
+    display: none;
+    margin-top: 8px;
+
+    transition: 0.4s ease;
+}
+
+.inbox .container:hover .delete-icon {
+    display: block;
+    text-align: center;
+}
+
+.inbox .container .delete-icon form {
+    display: flex;
+    justify-content: center;
+}
+
+.inbox .container .delete-icon button {
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 auto;
+    font-weight: 500;
+    background-color: #871313;
+    padding: 2px 12px;
+    border-radius: 5px;
+
+    transition: all 0.4s ease-in-out;
+}
+
+.inbox .container .delete-icon button:hover {
+    background-color: #b02424;
+}
+
+.friend-pic {
+    margin-left: 10px;
+    width: 55px;
+    border-radius: 50%;
+    border: 1px solid var(--dark-brown);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.name {
+    max-width: 280px;
+    color: #82410D;
+    font-weight: 800;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.message {
+    max-width: 600px;
+    font-weight: 500;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.date-time {
+    font-weight: 400;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.delete-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.4s ease;
+}
+
+.delete-container .confirm-delete {
+    width: 40%;
+    min-width: 300px;
+    max-width: 500px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px #000;
+    text-align: center;
+}
+
+.delete-container .confirm-delete h3 {
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.delete-container .confirm-delete p {
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.delete-container .confirm-delete .buttons-container form {
+    display: inline;
+    width: 45%;
+}
+
+.delete-container .confirm-delete .buttons-container button {
+    width: 45%;
+    color: #000;
+    max-width: 130px;
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.delete-container .confirm-delete .buttons-container .btn-cancel {
+    background-color: #AB9696;
+    margin-right: 10px;
+}
+
+.delete-container .confirm-delete .buttons-container .btn-sign-out {
+    background-color: #8f5322;
+    width: 100%;
+}
+
+.delete-container .confirm-delete .buttons-container .btn-cancel:hover {
+    background-color: #ccbfbf;
+}
+
+.delete-container .confirm-delete .buttons-container .btn-sign-out:hover {
+    background-color: #a97347;
+}
+
+@media screen and (max-width: 391px) {
+    .inbox .container {
+        width: 100%;
+        margin-left: 0;
+        padding: 1.2rem 5px;
+    }
+
+    .last-message-container {
+        height: calc(100vh - 62px);
+    }
+}

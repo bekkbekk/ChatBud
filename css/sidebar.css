@@ -1,0 +1,156 @@
+:root {
+    --brown: #B88855;
+    --light-brown: #F6D9A8;
+    --dark-brown: #82410D;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    width: 80px;
+    background: var(--dark-brown);
+    /* padding: 2px 8px; */
+    z-index: 99;
+    box-shadow: 0 0 5px #000;
+}
+
+.sidebar .upper-icons,
+.sidebar .lower-icons {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    text-align: center;
+    cursor: pointer;
+}
+
+.sidebar .upper-icons .circle-container {
+    background-color: var(--light-brown);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 5px; */
+    border-radius: 50%;
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 25px;
+
+    transition: 0.4s ease;
+}
+
+.sidebar .upper-icons .circle-container:hover {
+    /* ano magandang kulay */
+    background-color: #000;
+}
+
+.sidebar .upper-icons .circle-container .user-pic {
+    width: 45px;
+}
+
+.sidebar .upper-icons .logo {
+    width: 60px;
+    margin: 10px auto 20px;
+}
+
+.sidebar .active .icons {
+    color: #000;
+}
+
+.sidebar .icons {
+    color: #F6D9A8;
+    line-height: 80px;
+    font-size: 30px;
+    text-align: center;
+
+    transition: 0.4s ease;
+}
+
+.sidebar .icons:hover {
+    color: #000;
+}
+
+.black-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.4s ease;
+}
+
+.black-container .confirm-dialog {
+    width: 40%;
+    min-width: 300px;
+    max-width: 500px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px #000;
+    text-align: center;
+}
+
+.black-container .confirm-dialog h3 {
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.black-container .confirm-dialog p {
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.black-container .confirm-dialog .buttons-container button {
+    width: 45%;
+    color: #000;
+    max-width: 130px;
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.black-container .confirm-dialog .buttons-container .btn-cancel {
+    background-color: #AB9696;
+    margin-right: 10px;
+}
+
+.black-container .confirm-dialog .buttons-container .btn-sign-out {
+    background-color: #8f5322;
+}
+
+.black-container .confirm-dialog .buttons-container .btn-cancel:hover {
+    background-color: #ccbfbf;
+}
+
+.black-container .confirm-dialog .buttons-container .btn-sign-out:hover {
+    background-color: #a97347;
+}
+
+@media screen and (max-width: 391px) {
+    .sidebar {
+        display: none;
+    }
+}

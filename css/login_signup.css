@@ -1,0 +1,132 @@
+:root {
+    --brown: #B88855;
+    --light-brown: #F6D9A8;
+    --dark-brown: #82410D;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url('../images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .form-container {
+    min-width: 300px;
+    max-width: 430px;
+    margin: 50px 0;
+    width: 100%;
+    background: var(--light-brown);
+    border-radius: 7px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.container .form-container .form {
+    padding: 3rem;
+}
+
+.container .form-container .form h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+
+    color: var(--dark-brown);
+}
+
+.container .form-container .form .error-message {
+    background-color: rgba(255, 0, 0, 0.3);
+    padding: 2px 5px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    border: 2px solid red;
+}
+
+.container .form-container .form .error-message h5 {
+    margin: 0;
+    padding: 3px 7px;
+    text-align: center;
+}
+
+.container .form-container .form input {
+    height: 60px;
+    width: 100%;
+    padding: 0 15px;
+    font-size: 17px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+.container .form-container .form form input:focus {
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* .container .form-container .form a {
+    font-size: 16px;
+    color: #084298;
+    text-align: center;
+    text-decoration: none;
+} */
+
+.container .form-container .form a:hover {
+    text-decoration: underline;
+}
+
+.container .form-container .form input.button {
+    background-color: var(--dark-brown);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: var(--light-brown);
+    cursor: pointer;
+    transition: 0.4s;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    overflow: hidden;
+    margin-top: 25px;
+}
+
+.container .form-container .form input.button:hover {
+    background: #9c6f44;
+    color: var(--light-brown);
+}
+
+.sign-up {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+
+    color: var(--dark-brown);
+}
+
+.sign-up a {
+    color: #084298;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.sign-up a:hover {
+    text-decoration: underline;
+}
