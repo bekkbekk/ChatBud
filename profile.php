@@ -9,7 +9,6 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $userId = $_SESSION['user_id'];
-$userImage = $_SESSION['user_image'];
 ?>
 
 
@@ -57,16 +56,12 @@ $userImage = $_SESSION['user_image'];
         ?>
 
         <div class="circle-container">
-            <img src="./images/profile_pics/<?php echo $userImage ?>">
+            <img src="./images/profile_pics/<?php echo $row['image'] ?>">
         </div>
 
         <h2>
             <?php echo $row['f_name'] . ' ' . $row['l_name'] ?>
         </h2>
-
-        <h5>
-            <?php echo $row['email'] ?>
-        </h5>
 
         <div class="date">
             <i class="fa fa-birthday-cake" aria-hidden="true"></i>
@@ -74,7 +69,7 @@ $userImage = $_SESSION['user_image'];
                 <?php echo convertBirthdate($row['birthdate']) ?>
             </h6>
         </div>
-        <a href="#" class="btn">Edit Profile</a>
+        <a href="edit_profile.php" class="btn">Edit Profile</a>
     </div>
 </body>
 

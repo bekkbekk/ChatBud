@@ -4,7 +4,12 @@
 
         <a href="profile.php">
             <div class="circle-container">
-                <img src="images/profile_pics/<?php echo $userImage ?>" class="user-pic" alt="user-pic">
+                <?php
+                $queryImage = "SELECT image FROM users WHERE id=$userId";
+                $imageResult = executeQuery($queryImage);
+                $imageRow = mysqli_fetch_assoc($imageResult);
+                ?>
+                <img src="images/profile_pics/<?php echo $imageRow['image'] ?>" class="user-pic" alt="user-pic">
             </div>
         </a>
 

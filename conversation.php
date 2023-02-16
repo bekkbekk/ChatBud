@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $userId = $_SESSION['user_id'];
-$userImage = $_SESSION['user_image'];
+$userImage;
 $friendId;
 $friendFName;
 $friendLName;

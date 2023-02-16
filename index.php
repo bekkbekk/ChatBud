@@ -21,7 +21,6 @@ if (isset($_SESSION['id'])) { // kapag mula sa login
     $userImage = $row['image'];
 
     $_SESSION['user_id'] = $sessionId;
-    $_SESSION['user_image'] = $row['image'];
 
 } else if (isset($_SESSION['email'])) { // kapag mula sa signup
     $sessionEmail = $_SESSION['email'];
@@ -35,7 +34,6 @@ if (isset($_SESSION['id'])) { // kapag mula sa login
     $userImage = $row['image'];
 
     $_SESSION['user_id'] = $row['id'];
-    $_SESSION['user_image'] = $row['image'];
 
 } else { // kapag di pa logged in
     header("Location: login.php");
