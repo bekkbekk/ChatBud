@@ -96,6 +96,7 @@ body {
 .friend-pic {
     margin-left: 10px;
     width: 55px;
+    height: 55px;
     border-radius: 50%;
     border: 1px solid var(--dark-brown);
 }
