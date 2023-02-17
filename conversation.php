@@ -41,7 +41,7 @@ if (isset($_POST['text'])) {
     $chatIdUserSender;
     $chatIdUserReceiver;
 
-    if ($text == "") {
+    if (trim($text) == "") {
         $text = "👍";
     }
 
@@ -171,7 +171,7 @@ if (isset($_POST['delete'])) {
                         <div class="message-container right">
                             <div class="message-box right">
                                 <p>
-                                    <?php echo $row['text'] ?>
+                                    <?php echo nl2br(trim($row['text'])) ?>
                                 </p>
                             </div>
                             <div class="date-time-container right">
@@ -185,7 +185,7 @@ if (isset($_POST['delete'])) {
                         <div class="message-container">
                             <div class="message-box left">
                                 <p>
-                                    <?php echo $row['text'] ?>
+                                    <?php echo nl2br(trim($row['text'])) ?>
                                 </p>
                             </div>
                             <div class="date-time-container left">
@@ -201,10 +201,10 @@ if (isset($_POST['delete'])) {
                 ?>
             </div>
 
-            <form method="POST">
+            <form method="POST" id="message-form">
                 <div class="input-container">
-                    <input type="text" name="text" placeholder="Type a message..." autocomplete="off" maxlength="255"
-                        autofocus>
+                    <textarea id="message-content" name="text" placeholder="Type a message..." autocomplete="off"
+                        maxlength="255" autofocus></textarea>
                     <button>Send</button>
                 </div>
             </form>
@@ -214,7 +214,23 @@ if (isset($_POST['delete'])) {
 </body>
 
 <script>
-    // AJA
+    // Enter to Submit
+    window.addEventListener('load', () => {
+        let form = document.getElementById("message-form");
+        let textarea = document.getElementById("message-content");
+
+        textarea.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" && event.shiftKey) {
+                // do nothing
+            } else if (event.key === "Enter") {
+                event.preventDefault();  // prevent new line in textarea
+                form.submit();  // submit the form
+            }
+        });
+    });
+
+
+    // AJAX
     function getNewMessage() {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {

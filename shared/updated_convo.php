@@ -21,7 +21,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         <div class="message-container right">
             <div class="message-box right">
                 <p>
-                    ' . $row['text'] . '
+                    ' . nl2br(trim($row['text'])) . '
                 </p>
             </div>
             <div class="date-time-container right">
@@ -35,7 +35,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         <div class="message-container">
             <div class="message-box left">
                 <p>
-                    ' . $row['text'] . '
+                    ' . nl2br(trim($row['text'])) . '
                 </p>
             </div>
             <div class="date-time-container left">

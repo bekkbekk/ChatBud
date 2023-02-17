@@ -100,6 +100,7 @@
 }
 
 .column-container .col2 .content .message-container .message-box p {
+    padding: 0 2px;
     word-break: break-word;
 }
 
@@ -137,7 +138,7 @@
     background-color: #F6D9A8;
 }
 
-input[type="text"] {
+textarea {
     padding: 10px;
     border-radius: 10px;
     border: none;
@@ -146,11 +147,14 @@ input[type="text"] {
     width: calc(100% - 55px);
     background-color: #fff;
     font-size: 16px;
+    resize: none;
+    height: 45px;
+    overflow-y: auto;
 }
 
 button {
     padding: 10px 20px;
-    background-color: #1c1c1e;
+    background-color: #552b09;
     color: #fff;
     border-radius: 10px;
     border: none;
