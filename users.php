@@ -57,7 +57,9 @@ $userId = $_SESSION['user_id'];
             ?>
             <a href="conversation.php?id=<?php echo $row['id'] ?>">
                 <div class="container">
-                    <img src="images/profile_pics/<?php echo $row['image'] ?>" class="friend-pic">
+                    <div class="friend-circle-container">
+                        <img src="images/profile_pics/<?php echo $row['image'] ?>" class="friend-pic">
+                    </div>
                     <h2>
                         <?php echo $row['f_name'] . ' ' . $row['l_name'] ?>
                     </h2>

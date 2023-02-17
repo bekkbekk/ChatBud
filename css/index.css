@@ -93,12 +93,20 @@ body {
     background-color: #b02424;
 }
 
-.friend-pic {
-    margin-left: 10px;
+.container .inbox-circle-container {
+    background-color: #fff;
     width: 55px;
     height: 55px;
+    margin-left: 10px;
     border-radius: 50%;
+    overflow: hidden;
     border: 1px solid var(--dark-brown);
+}
+
+.friend-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .content {

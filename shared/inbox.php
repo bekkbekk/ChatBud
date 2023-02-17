@@ -34,7 +34,9 @@
                 <div class="container" onclick="window.location='conversation.php?id=<?php echo $receiverId ?>'">
 
                     <div class="detail-message">
-                        <img src="images/profile_pics/<?php echo $row2['image'] ?>" class="friend-pic" alt="user-pic">
+                        <div class="inbox-circle-container">
+                            <img src="images/profile_pics/<?php echo $row2['image'] ?>" class="friend-pic" alt="user-pic">
+                        </div>
 
                         <div class="content">
                             <h3 class="name">

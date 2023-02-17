@@ -67,10 +67,15 @@ i:hover {
     border: 5px solid var(--dark-brown);
 }
 
+.container .circle-container label {
+    width: 100%;
+    height: 100%;
+}
+
 
 .container .circle-container img {
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     cursor: pointer;
 }

@@ -147,7 +147,9 @@ if (isset($_POST['delete'])) {
         <div class="col2">
             <div class="header">
                 <a href="index.php"><i class="fa-solid fa-circle-arrow-left"></i></a>
-                <img src="images/profile_pics/<?php echo $friendImage ?>" alt="friend-pic">
+                <div class="friend-circle-container">
+                    <img src="images/profile_pics/<?php echo $friendImage ?>" alt="friend-pic">
+                </div>
                 <h3>
                     <?php echo $friendFName . ' ' . $friendLName ?>
                 </h3>

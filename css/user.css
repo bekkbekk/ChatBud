@@ -53,12 +53,19 @@ body {
     background-color: var(--light-brown);
 }
 
-.container .friend-pic {
-   width: 50px;
-   height: 50px;
-   border-radius: 50%;
-   background-color: #fff;
-   border: 1px solid var(--dark-brown);
+.container .friend-circle-container {
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid var(--dark-brown);
+}
+
+.container .friend-circle-container .friend-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .container h2 {
