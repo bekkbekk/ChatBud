@@ -16,7 +16,7 @@
         <a href="index.php" class="<?php if ($pagename == "index") {
             echo "active";
         } ?>">
-            <i class="fa-solid fa-inbox icons"></i>
+            <i class="fa-solid fa-message icons"></i>
         </a>
 
         <a href="users.php" class="<?php if ($pagename == "users") {
