@@ -53,18 +53,28 @@ $userId = $_SESSION['user_id'];
         $query = "SELECT * FROM users WHERE NOT id = $userId ORDER BY f_name";
         $result = executeQuery($query);
 
-        while ($row = mysqli_fetch_assoc($result)) {
-            ?>
-            <a href="conversation.php?id=<?php echo $row['id'] ?>">
-                <div class="container">
-                    <div class="friend-circle-container">
-                        <img src="images/profile_pics/<?php echo $row['image'] ?>" class="friend-pic">
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+                <a href="conversation.php?id=<?php echo $row['id'] ?>">
+                    <div class="container">
+                        <div class="friend-circle-container">
+                            <img src="images/profile_pics/<?php echo $row['image'] ?>" class="friend-pic">
+                        </div>
+                        <h2>
+                            <?php echo $row['f_name'] . ' ' . $row['l_name'] ?>
+                        </h2>
                     </div>
-                    <h2>
-                        <?php echo $row['f_name'] . ' ' . $row['l_name'] ?>
-                    </h2>
-                </div>
-            </a>
+                </a>
+                <?php
+            }
+        } else {
+            ?>
+
+            <div class="empty-message">
+                <p>There are no other users yet.</p>
+            </div>
+
             <?php
         }
         ?>

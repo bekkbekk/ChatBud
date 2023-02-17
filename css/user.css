@@ -79,6 +79,28 @@ body {
     text-overflow: ellipsis;
 }
 
+.empty-message {
+    height: calc(100vh - 75px);
+    width: calc(100% - 80px);
+    /* background-color: red; */
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.empty-message p {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    word-wrap: break-word;
+    background-color: rgba(128, 102, 74, 0.35);
+    border-radius: 10px;
+    padding: 15px 20px;
+}
+
 @media screen and (max-width: 391px) {
     .container {
         margin-left: 0;
@@ -86,5 +108,10 @@ body {
 
     .users-container {
         height: calc(100vh - 62px);
+    }
+
+    .empty-message {
+        height: calc(100vh - 62px);
+        width: 100%;
     }
 }
