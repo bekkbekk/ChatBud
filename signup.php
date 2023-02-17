@@ -52,8 +52,8 @@ if (isset($_POST['firstname'])) {
                         autocomplete="off">
                     <input id="lastname" name="lastname" type="text" placeholder="Last Name" maxlength="30" required
                         autocomplete="off">
-                    <input type="date" name="birthdate" id="birthdate" placeholder="Birthdate" required
-                        autocomplete="off">
+                    <input type="text" id="date" name="birthdate" placeholder="Birthdate" onfocus="(this.type='date')"
+                        onblur="(this.type='text')" required autocomplete="off">
                     <input id="email" name="email" maxlength="50" type="email" placeholder="Email" required
                         autocomplete="off">
                     <input id="password" name="password" type="password" placeholder="Password" maxlength="30" required

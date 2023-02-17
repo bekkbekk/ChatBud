@@ -101,7 +101,7 @@ if (isset($_POST['update'])) {
             </div>
 
             <div class="form-group-date">
-                <input type="date" id="date" name="birthdate" value="<?php echo $row['birthdate'] ?>" required>
+                <input type="text" id="date" name="birthdate" placeholder="Birthdate" onfocus="(this.type='date')" onblur="(this.type='text')" required autocomplete="off" value="<?php echo $row['birthdate'] ?>">
             </div>
 
             <button class="btn" name="update">Save Profile</button>
