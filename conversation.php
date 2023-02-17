@@ -214,23 +214,17 @@ if (isset($_POST['delete'])) {
 </body>
 
 <script>
-    // JavaScript
+    // AJA
     function getNewMessage() {
-        // create an AJAX request object
         var xmlhttp = new XMLHttpRequest();
-
-        // set the callback function to be executed when the request completes
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                // update the chat container with the new message
                 document.getElementById("all-message-container").innerHTML = xmlhttp.responseText;
             }
         }
 
-        // open the AJAX request
         xmlhttp.open("GET", "shared/updated_convo.php?userId=<?php echo $userId ?>&friendId=<?php echo $friendId ?>", true);
 
-        // send the AJAX request
         xmlhttp.send();
     }
 
