@@ -153,7 +153,7 @@ if (isset($_POST['delete'])) {
                 </h3>
             </div>
 
-            <div class="content">
+            <div class="content" id="all-message-container">
 
                 <?php
 
@@ -203,7 +203,8 @@ if (isset($_POST['delete'])) {
 
             <form method="POST">
                 <div class="input-container">
-                    <input type="text" name="text" placeholder="Type a message..." autocomplete="off" maxlength="255" autofocus>
+                    <input type="text" name="text" placeholder="Type a message..." autocomplete="off" maxlength="255"
+                        autofocus>
                     <button>Send</button>
                 </div>
             </form>
@@ -213,7 +214,28 @@ if (isset($_POST['delete'])) {
 </body>
 
 <script>
+    // JavaScript
+    function getNewMessage() {
+        // create an AJAX request object
+        var xmlhttp = new XMLHttpRequest();
 
+        // set the callback function to be executed when the request completes
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                // update the chat container with the new message
+                document.getElementById("all-message-container").innerHTML = xmlhttp.responseText;
+            }
+        }
+
+        // open the AJAX request
+        xmlhttp.open("GET", "shared/updated_convo.php?userId=<?php echo $userId ?>&friendId=<?php echo $friendId ?>", true);
+
+        // send the AJAX request
+        xmlhttp.send();
+    }
+
+    // set a timer to execute the getNewMessage function every 500ms
+    setInterval(getNewMessage, 500);
 </script>
 
 </html>
