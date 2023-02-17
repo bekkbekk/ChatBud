@@ -91,6 +91,7 @@ if (isset($_POST['update'])) {
                     <img src="images/profile_pics/<?php echo $row['image'] ?>" alt="profile-pic">
                 </label>
             </div>
+            
             <input type="file" accept="image/*" id="prof-pic" name="profpic">
 
             <div class="form-group-name">
