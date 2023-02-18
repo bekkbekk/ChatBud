@@ -35,7 +35,7 @@ header .hamburger {
     width: 35px;
     height: 35px;
     cursor: pointer;
-    z-index: 9999;
+    z-index: 998;
 }
 
 header .hamburger::after,
@@ -70,7 +70,7 @@ header .hamburger.is-active .bar {
     left: -100%;
     bottom: 0;
     width: 85%;
-    z-index: 998;
+    z-index: 997;
     box-shadow: 0 0 10px #000;
     /* border-bottom-right-radius: 10px;
     border-top-right-radius: 10px; */
