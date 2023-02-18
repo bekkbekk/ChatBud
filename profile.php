@@ -36,7 +36,7 @@ $userId = $_SESSION['user_id'];
 
     <!-- styles -->
     <link rel="stylesheet" href="css/profile.css">
-    <link rel="shortcut icon" href="images/icons/chatbud_logo.png">
+    <link rel="shortcut icon" href="images/icons/ChatBud.png">
 
 </head>
 

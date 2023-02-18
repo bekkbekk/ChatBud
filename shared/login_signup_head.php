@@ -28,5 +28,5 @@ include "functions.php";
 
     <!-- styles -->
     <link rel="stylesheet" href="css/login_signup.css">
-    <link rel="shortcut icon" href="images/icons/chatbud_logo-SQUARE.png">
+    <link rel="shortcut icon" href="images/icons/ChatBud.png">
 </head>

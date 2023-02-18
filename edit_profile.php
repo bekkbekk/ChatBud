@@ -68,7 +68,7 @@ if (isset($_POST['update'])) {
 
     <!-- styles -->
     <link rel="stylesheet" href="css/edit_profile.css">
-    <link rel="shortcut icon" href="images/icons/chatbud_logo.png">
+    <link rel="shortcut icon" href="images/icons/ChatBud.png">
 
 </head>
 
