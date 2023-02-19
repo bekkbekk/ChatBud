@@ -62,15 +62,15 @@
                         </div>
                     </div>
 
-                    <div class="delete-container">
-                        <div class="confirm-delete">
+                    <div class="delete-container black-container">
+                        <div class="confirm-delete confirm-dialog-box">
                             <h3>DELETE</h3>
                             <p>Are you sure you want to delete conversation with
                                 <?php echo $row2['f_name'] ?>?
                             </p>
                             <div class="buttons-container">
-                                <button class="btn-cancel-del">Cancel</button>
-                                <form method="POST"><button class="btn-sign-out" name="delete"
+                                <button class="btn-cancel-del btn-negative">Cancel</button>
+                                <form method="POST"><button class="btn-confirm-del btn-positive" name="delete"
                                         value="<?php echo $chatId ?>">Delete</button>
                                 </form>
                             </div>

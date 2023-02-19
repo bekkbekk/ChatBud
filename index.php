@@ -70,6 +70,7 @@ if (isset($_POST['delete'])) {
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/confirm_dialog.css">
     <link rel="shortcut icon" href="images/icons/ChatBud.png">
 
 </head>

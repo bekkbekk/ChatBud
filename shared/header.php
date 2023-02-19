@@ -26,12 +26,12 @@
 </div>
 
 <div class="black-container">
-    <div class="confirm-dialog">
+    <div class="confirm-dialog-box">
         <h3>Signing Out</h3>
         <p>Are you sure you want to sign out?</p>
         <div class="buttons-container">
-            <button class="btn-cancel">Cancel</button>
-            <a href="login.php"><button class="btn-sign-out">Sign Out</button></a>
+            <button class="btn-cancel btn-negative">Cancel</button>
+            <a href="login.php"><button class="btn-sign-out btn-positive">Sign Out</button></a>
         </div>
     </div>
 </div>
