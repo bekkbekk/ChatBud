@@ -116,6 +116,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    width: calc(100% - 70px);
 }
 
 .name {
