@@ -116,9 +116,6 @@
             cancel.addEventListener('click', () => {
                 confirmDialogs[i].style.display = 'none';
             })
-        }
-
-
-
+        }     
     });
 </script>
