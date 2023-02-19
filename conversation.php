@@ -137,7 +137,10 @@ if (isset($_POST['delete'])) {
 </head>
 
 <body>
-    <?php include "shared/sidebar.php"; ?>
+    <?php
+    $pagename = "index";
+    include "shared/sidebar.php";
+    ?>
 
     <div class="column-container">
         <div class="col1">
