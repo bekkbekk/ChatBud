@@ -44,6 +44,7 @@ if (isset($_POST['delete'])) {
     
     $query = "DELETE FROM chats WHERE id=$chatId";
     executeQuery($query);
+    header("Location: index.php");
 }
 
 ?>

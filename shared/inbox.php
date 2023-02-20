@@ -6,7 +6,7 @@
         include "shared/header.php";
         ?>
 
-        <div class="last-message-container">
+        <div class="last-message-container" id="last-message-container">
             <!-- codes to manipulate -->
             <?php
 
@@ -58,22 +58,8 @@
                         </div>
 
                         <div class="delete-icon">
-                            <button class="btn-delete"><i class="fa-solid fa-trash"></i> DELETE</button>
-                        </div>
-                    </div>
-
-                    <div class="delete-container black-container">
-                        <div class="confirm-delete confirm-dialog-box">
-                            <h3>DELETE</h3>
-                            <p>Are you sure you want to delete conversation with
-                                <?php echo $row2['f_name'] ?>?
-                            </p>
-                            <div class="buttons-container">
-                                <button class="btn-cancel-del btn-negative">Cancel</button>
-                                <form method="POST"><button class="btn-confirm-del btn-positive" name="delete"
-                                        value="<?php echo $chatId ?>">Delete</button>
-                                </form>
-                            </div>
+                            <button class="btn-delete" value="<?php echo $chatId ?>"><i class="fa-solid fa-trash"></i> DELETE
+                            </button>
                         </div>
                     </div>
 
@@ -96,26 +82,59 @@
     </div>
 </div>
 
+<div class="delete-container black-container">
+    <div class="confirm-delete confirm-dialog-box">
+        <h3>DELETE</h3>
+        <p>Are you sure you want to delete conversation with </p>
+        <div class="buttons-container">
+            <button class="btn-cancel-del btn-negative">Cancel</button>
+            <form method="POST">
+                <button class="btn-confirm-del btn-positive" name="delete">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+
 <script>
     window.addEventListener('load', () => {
         // confirm dialog to delete
-        const confirmDialogs = document.querySelectorAll('.delete-container');
         const deleteBtns = document.querySelectorAll('.btn-delete');
-        const cancelBtns = document.querySelectorAll('.btn-cancel-del');
+        const confirmDialog = document.querySelector('.delete-container');
+        const cancelBtn = document.querySelector('.btn-cancel-del');
+        const confirmDelBtn = document.querySelector('.btn-confirm-del');
+        const messageToDelete = confirmDialog.querySelector('p');
 
         for (let i = 0; i < deleteBtns.length; i++) {
             let del = deleteBtns[i];
             del.addEventListener('click', (e) => {
                 e.stopPropagation();
-                confirmDialogs[i].style.display = 'flex';
+                confirmDialog.style.display = 'flex';
+                confirmDelBtn.value = del.value;
+                let name = del.parentElement.previousElementSibling.querySelector('.name').innerHTML;
+                messageToDelete.innerHTML += name + "?";
             })
         }
 
-        for (let i = 0; i < cancelBtns.length; i++) {
-            let cancel = cancelBtns[i];
-            cancel.addEventListener('click', () => {
-                confirmDialogs[i].style.display = 'none';
-            })
-        }     
+        cancelBtn.addEventListener('click', () => {
+            confirmDialog.style.display = 'none';
+            messageToDelete.innerHTML = "Are you sure you want to delete conversation with ";
+        })
+
     });
+
+    // AJAX
+    function getNewInbox() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("last-message-container").innerHTML = xmlhttp.responseText;
+            }
+        }
+
+        xmlhttp.open("GET", "shared/updated_inbox.php", true);
+        xmlhttp.send();
+    }
+
+    // set a timer to execute the getNewInbox function every 5000ms
+    setInterval(getNewInbox, 5000);
 </script>
