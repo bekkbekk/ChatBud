@@ -36,7 +36,8 @@ function loginUser($email, $password)
     $result = executeQuery($query);
 
     if (mysqli_num_rows($result) > 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
+        $row = mysqli_fetch_assoc($result);
+        if ($password == $row['password']) { // case-sensitive
             return $row['id']; // returns the id of the user
         }
     }
@@ -69,7 +70,8 @@ function convertDateConvo($date_time)
     return date("M d, Y", strtotime($date_string)) . ' AT ' . date("g:i A", strtotime($time_string));
 }
 
-function convertBirthdate($date) {
+function convertBirthdate($date)
+{
     return date("F d, Y", strtotime($date));
 }
 

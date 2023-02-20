@@ -48,19 +48,39 @@ if (isset($_POST['firstname'])) {
                     <?php
                 } ?>
                 <form method="POST" autocomplete="off">
-                    <input id="firstname" name="firstname" type="text" placeholder="First Name" maxlength="50" required
-                        autocomplete="off">
-                    <input id="lastname" name="lastname" type="text" placeholder="Last Name" maxlength="30" required
-                        autocomplete="off">
-                    <input type="text" id="date" name="birthdate" placeholder="Birthdate" onfocus="(this.type='date')"
-                        onblur="(this.type='text')" required autocomplete="off">
-                    <input id="email" name="email" maxlength="50" type="email" placeholder="Email" required
-                        autocomplete="off">
-                    <input id="password" name="password" type="password" placeholder="Password" maxlength="30" required
-                        autocomplete="off">
-                    <input id="conpassword" name="conpassword" type="password" placeholder="Confirm your password"
-                        maxlength="30" required autocomplete="off">
-                    <input type="submit" class="button" value="Sign Up">
+                    <?php if (isset($_POST['firstname'])) { ?>
+                        <input id="firstname" name="firstname" type="text" placeholder="First Name" maxlength="50" required
+                            autocomplete="off" value="<?php echo $fName ?>">
+                        <input id="lastname" name="lastname" type="text" placeholder="Last Name" maxlength="30" required
+                            autocomplete="off" value="<?php echo $lName ?>">
+                        <input type="text" id="date" name="birthdate" placeholder="Birthdate" onfocus="(this.type='date')"
+                            onblur="(this.type='text')" required autocomplete="off" value="<?php echo $birthdate ?>">
+                        <input id="email" name="email" maxlength="50" type="email" placeholder="Email" required
+                            autocomplete="off" value="<?php echo $email ?>">
+                        <input id="password" minlength="7" name="password" type="password" placeholder="Password"
+                            maxlength="30" required autocomplete="off" value="<?php echo $password ?>">
+                        <input id="conpassword" name="conpassword" minlength="7" type="password"
+                            placeholder="Confirm your password" maxlength="30" required autocomplete="off"
+                            value="<?php echo $conPassword ?>">
+                        <input type="submit" class="button" value="Sign Up">
+
+                    <?php } else { ?>
+                        <input id="firstname" name="firstname" type="text" placeholder="First Name" maxlength="50" required
+                            autocomplete="off">
+                        <input id="lastname" name="lastname" type="text" placeholder="Last Name" maxlength="30" required
+                            autocomplete="off">
+                        <input type="text" id="date" name="birthdate" placeholder="Birthdate" onfocus="(this.type='date')"
+                            onblur="(this.type='text')" required autocomplete="off">
+                        <input id="email" name="email" maxlength="50" type="email" placeholder="Email" required
+                            autocomplete="off">
+                        <input id="password" minlength="7" name="password" type="password" placeholder="Password"
+                            maxlength="30" required autocomplete="off">
+                        <input id="conpassword" name="conpassword" minlength="7" type="password"
+                            placeholder="Confirm your password" maxlength="30" required autocomplete="off">
+                        <input type="submit" class="button" value="Sign Up">
+                    <?php }
+
+                    ?>
                 </form>
 
                 <div class="sign-up">

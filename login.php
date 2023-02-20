@@ -40,10 +40,18 @@ if (isset($_POST['email'])) {
                     <?php
                 } ?>
                 <form method="POST" autocomplete="off">
-                    <input id="email" name="email" type="email" placeholder="Email" maxlength="50" required>
-                    <input id="password" name="password" type="password" maxlength="30" placeholder="Password" required>
-                    <!-- <a href="#">Forgot password?</a> -->
-                    <input type="submit" class="button" value="Log In">
+                    <?php
+                    if (isset($_POST['email'])) { ?>
+                        <input id="email" name="email" type="email" placeholder="Email" maxlength="50" required
+                            value="<?php echo $email ?>">
+                        <input id="password" name="password" type="password" maxlength="30" placeholder="Password" required
+                            value="<?php echo $password ?>">
+                        <input type="submit" class="button" value="Log In">
+                    <?php } else { ?>
+                        <input id="email" name="email" type="email" placeholder="Email" maxlength="50" required>
+                        <input id="password" name="password" type="password" maxlength="30" placeholder="Password" required>
+                        <input type="submit" class="button" value="Log In">
+                    <?php } ?>
                 </form>
 
                 <div class="sign-up">
