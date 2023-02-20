@@ -49,12 +49,37 @@ $userId = $_SESSION['user_id'];
     include "shared/header.php";
     ?>
 
+    <div class="search-bar-container">
+        <form onsubmit="return validateForm()">
+            <input type="text" id="search" name="search" placeholder="Search users" required>
+            <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+    </div>
+
     <div class="users-container">
         <?php
-        $query = "SELECT * FROM users WHERE NOT id = $userId ORDER BY f_name";
+        $query;
+        $search;
+
+        if (isset($_GET['search'])) {
+            $search = trim($_GET['search']);
+            $query = "SELECT * FROM users WHERE CONCAT(f_name, ' ', l_name) LIKE '%$search%' AND NOT id = $userId ORDER BY f_name";
+        } else {
+            $query = "SELECT * FROM users WHERE NOT id = $userId ORDER BY f_name";
+        }
         $result = executeQuery($query);
 
         if (mysqli_num_rows($result) > 0) {
+            if (isset($_GET['search'])) {
+                ?>
+
+                <div class="search-results-label">
+                    Search results from "<?php echo $search ?>"
+                </div>
+
+                <?php
+            }
+
             while ($row = mysqli_fetch_assoc($result)) {
                 ?>
                 <a href="conversation.php?id=<?php echo $row['id'] ?>">
@@ -73,7 +98,15 @@ $userId = $_SESSION['user_id'];
             ?>
 
             <div class="empty-message">
-                <p>There are no other users yet.</p>
+                <p>
+                    <?php
+                    if (isset($_GET['search'])) {
+                        echo "No \"$search\" found.";
+                    } else {
+                        echo "There are no other users yet.";
+                    }
+                    ?>
+                </p>
             </div>
 
             <?php
@@ -81,6 +114,15 @@ $userId = $_SESSION['user_id'];
         ?>
     </div>
 
+    <script>
+        function validateForm() {
+            var inputVal = document.getElementById("search").value.trim();
+            if (inputVal === "") {
+                return false; // prevent form submission
+            }
+            return true; // allow form submission
+        }
+    </script>
 </body>
 
 </html>
