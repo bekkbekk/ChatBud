@@ -17,7 +17,7 @@
 
 .black-container .confirm-dialog-box {
     width: 40%;
-    min-width: 300px;
+    min-width: 250px;
     max-width: 380px;
     min-height: 200px;
     display: flex;
@@ -43,7 +43,7 @@
 }
 
 .black-container .confirm-dialog-box .buttons-container button {
-    width: 45%;
+    width: 49%;
     color: #fff;
     max-width: 130px;
     padding: 5px 10px;
@@ -74,83 +74,3 @@
 .black-container .confirm-dialog-box .buttons-container .btn-positive:hover {
     background-color: #a97347;
 }
-
-
-/* DELETE CONVO */
-/* .delete-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-
-    display: none;
-    justify-content: center;
-    align-items: center;
-
-    transition: 0.4s ease;
-}
-
-.delete-container .confirm-delete {
-    width: 40%;
-    min-width: 300px;
-    max-width: 500px;
-    min-height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 5px 5px 10px #000;
-    text-align: center;
-}
-
-.delete-container .confirm-delete h3 {
-    font-weight: 700;
-    font-size: 30px;
-    margin-bottom: 5px;
-}
-
-.delete-container .confirm-delete p {
-    font-weight: 400;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.delete-container .confirm-delete .buttons-container form {
-    display: inline;
-    width: 45%;
-}
-
-.delete-container .confirm-delete .buttons-container button {
-    width: 45%;
-    color: #fff;
-    max-width: 130px;
-    padding: 5px 10px;
-    font-size: 20px;
-    border-radius: 10px;
-    cursor: pointer;
-
-    transition: 0.2s ease;
-}
-
-.delete-container .confirm-delete .buttons-container .btn-cancel-del {
-    background-color: #1c1c1e;
-    margin-right: 10px;
-}
-
-.delete-container .confirm-delete .buttons-container .btn-confirm-del {
-    background-color: #8f5322;
-    width: 100%;
-}
-
-.delete-container .confirm-delete .buttons-container .btn-cancel-del:hover {
-    background-color: #323234;
-}
-
-.delete-container .confirm-delete .buttons-container .btn-confirm-del:hover {
-    background-color: #a97347;
-} */
