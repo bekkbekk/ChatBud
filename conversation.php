@@ -92,6 +92,7 @@ if (isset($_POST['text'])) {
     }
 
     // insert messages both room
+    $text = mysqli_real_escape_string($conn, $text);
     $insertQuery2 = "INSERT INTO messages (chat_id, sender_id, text) VALUES ($chatIdUserSender, $userId, '$text'), ($chatIdUserReceiver, $userId, '$text')";
     executeQuery($insertQuery2);
 

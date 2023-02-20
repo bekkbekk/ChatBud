@@ -21,6 +21,11 @@ if (isset($_POST['firstname'])) {
         $isError = true;
     } else {
         if (passwordMatch($password, $conPassword)) {
+            $fName = mysqli_real_escape_string($conn, $fName);
+            $lName = mysqli_real_escape_string($conn, $lName);
+            $email = mysqli_real_escape_string($conn, $email);
+            $password = mysqli_real_escape_string($conn, $password);
+
             signUpUser($fName, $lName, $email, $password, $birthdate);
         } else {
             $errorMessage = "Passwords do not match.";

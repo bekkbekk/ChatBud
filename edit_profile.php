@@ -17,6 +17,9 @@ if (isset($_POST['update'])) {
     $l_name = $_POST['l_name'];
     $birthdate = $_POST['birthdate'];
 
+    $f_name = mysqli_real_escape_string($conn, $f_name);
+    $l_name = mysqli_real_escape_string($conn, $l_name);
+
     if ($_FILES['profpic']['name'] != "") {
         $foldername = 'images/profile_pics/';
 
@@ -91,7 +94,7 @@ if (isset($_POST['update'])) {
                     <img src="images/profile_pics/<?php echo $row['image'] ?>" alt="profile-pic">
                 </label>
             </div>
-            
+
             <input type="file" accept="image/*" id="prof-pic" name="profpic">
 
             <div class="form-group-name">
@@ -102,7 +105,8 @@ if (isset($_POST['update'])) {
             </div>
 
             <div class="form-group-date">
-                <input type="text" id="date" name="birthdate" placeholder="Birthdate" onfocus="(this.type='date')" onblur="(this.type='text')" required autocomplete="off" value="<?php echo $row['birthdate'] ?>">
+                <input type="text" id="date" name="birthdate" placeholder="Birthdate" onfocus="(this.type='date')"
+                    onblur="(this.type='text')" required autocomplete="off" value="<?php echo $row['birthdate'] ?>">
             </div>
 
             <button class="btn" name="update">Save Profile</button>
