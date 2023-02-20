@@ -15,7 +15,6 @@ window.addEventListener('load', () => {
 
     logoutBtn.addEventListener('click', () => {
         confirmDialog.style.display = 'flex';
-        console.log("klujshflkjhsdf")
     })
 
     cancelBtn.addEventListener('click', () => {
