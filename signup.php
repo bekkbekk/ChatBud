@@ -3,7 +3,8 @@ session_start();
 session_destroy();
 session_start();
 
-include "shared/login_signup_head.php";
+include "shared/connect.php";
+include "shared/functions.php";
 
 $isError = false;
 $errorMessage = "";
@@ -33,6 +34,8 @@ if (isset($_POST['firstname'])) {
         }
     }
 }
+
+include "shared/login_signup_head.php";
 
 ?>
 
