@@ -79,6 +79,11 @@ body {
     box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
 }
 
+input:focus-within::placeholder {
+    transform: translate(-5px, -20px);
+    font-size: 12px;
+}
+
 /* .container .form-container .form a {
     font-size: 16px;
     color: #084298;
