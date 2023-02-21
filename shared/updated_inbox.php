@@ -4,7 +4,7 @@ session_start();
 include "connect.php";
 include "functions.php";
 
-$userId = $_SESSION['id'];
+$userId = $_SESSION['user_id'];
 
 // first query
 $query1 = "SELECT * FROM chats WHERE sender_id=$userId ORDER BY last_updated DESC";
