@@ -29,7 +29,7 @@ if (mysqli_num_rows($result1) > 0) {
         $row3 = mysqli_fetch_assoc($result3);
         ?>
 
-        <div class="container" onclick="window.location='conversation.php?id=<?php echo $receiverId ?>'">
+        <div class="container <?php if (isset($_GET['id']) && $_GET['id'] == $receiverId) echo "active-convo" ?>" onclick="window.location='conversation.php?id=<?php echo $receiverId ?>'">
 
             <div class="detail-message">
                 <div class="inbox-circle-container">

@@ -56,6 +56,10 @@ body {
 }
 
 .inbox .container:hover {
+    background-color: #ddd;
+}
+
+.inbox .container.active-convo {
     background-color: var(--light-brown);
 }
 
