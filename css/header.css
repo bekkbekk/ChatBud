@@ -134,7 +134,7 @@ header .hamburger.is-active .bar {
     font-weight: 500;
 }
 
-@media screen and (max-width: 391px) {
+@media screen and (max-width: 550px) {
     .mobile-nav-container {
         display: block;
     }
