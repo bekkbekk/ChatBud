@@ -1,6 +1,6 @@
 <div class="sidebar">
     <div class="upper-icons">
-        <!-- <a href="index.php"><img src="images/icons/chatbud_logo_no-text.png" class="logo" alt="logo"></a> -->
+        <img src="images/icons/ChatBud.png" class="logo" alt="logo">
 
         <a href="profile.php">
             <div class="circle-container">

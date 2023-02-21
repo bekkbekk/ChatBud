@@ -55,8 +55,9 @@
 }
 
 .sidebar .upper-icons .logo {
-    width: 60px;
-    margin: 10px auto 20px;
+    width: 55px;
+    margin: 12px auto 10px;
+    cursor: default;
 }
 
 .sidebar .active .icons {
