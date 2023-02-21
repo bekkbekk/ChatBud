@@ -106,8 +106,7 @@
         const confirmDelBtn = document.querySelector('.btn-confirm-del');
         const messageToDelete = confirmDialog.querySelector('p');
 
-        for (let i = 0; i < deleteBtns.length; i++) {
-            let del = deleteBtns[i];
+        deleteBtns.forEach(del => {
             del.addEventListener('click', (e) => {
                 e.stopPropagation();
                 confirmDialog.style.display = 'flex';
@@ -115,7 +114,7 @@
                 let name = del.parentElement.previousElementSibling.querySelector('.name').innerHTML;
                 messageToDelete.innerHTML += name + "?";
             })
-        }
+        })
 
         cancelBtn.addEventListener('click', () => {
             confirmDialog.style.display = 'none';
@@ -133,10 +132,10 @@
             }
         }
 
-        xmlhttp.open("GET", "shared/updated_inbox.php?id=<?php echo $_GET['id'] ?>", true);
-        xmlhttp.send();
-    }
+        xmlhttp.open("GET", "shared/updated_inbox.php<?php if (isset($_GET['id'])) echo "?id=" . $_GET['id'] ?>", true);
+            xmlhttp.send();
+        }
 
-    // set a timer to execute the getNewInbox function every 5000ms
-    // setInterval(getNewInbox, 5000);
-</script>
+        // set a timer to execute the getNewInbox function every 5000ms
+        setInterval(getNewInbox, 5000);
+    </script>
