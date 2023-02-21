@@ -116,7 +116,8 @@
             })
         })
 
-        cancelBtn.addEventListener('click', () => {
+        cancelBtn.addEventListener('click', (e) => {
+            e.preventDefault();
             confirmDialog.style.display = 'none';
             messageToDelete.innerHTML = "Are you sure you want to delete conversation with ";
         })
