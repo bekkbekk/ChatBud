@@ -88,12 +88,12 @@
     <div class="confirm-delete confirm-dialog-box">
         <h3>DELETE</h3>
         <p>Are you sure you want to delete conversation with </p>
-        <div class="buttons-container">
-            <button class="btn-cancel-del btn-negative">Cancel</button>
-            <form method="POST">
+        <form method="POST">
+            <div class="buttons-container">
+                <button class="btn-cancel-del btn-negative">Cancel</button>
                 <button class="btn-confirm-del btn-positive" name="delete">Delete</button>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 </div>
 

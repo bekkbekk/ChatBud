@@ -31,7 +31,7 @@
         <p>Are you sure you want to sign out?</p>
         <div class="buttons-container">
             <button class="btn-cancel btn-negative">Cancel</button>
-            <a href="login.php"><button class="btn-sign-out btn-positive">Sign Out</button></a>
+            <button class="btn-sign-out btn-positive" onclick="window.location='login.php'">Sign Out</button>
         </div>
     </div>
 </div>

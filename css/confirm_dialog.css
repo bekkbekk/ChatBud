@@ -17,7 +17,7 @@
 
 .black-container .confirm-dialog-box {
     width: 40%;
-    min-width: 250px;
+    /* min-width: 250px; */
     max-width: 380px;
     min-height: 200px;
     display: flex;
@@ -42,6 +42,12 @@
     margin-bottom: 10px;
 }
 
+.black-container .confirm-dialog-box .buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .black-container .confirm-dialog-box .buttons-container button {
     width: 49%;
     color: #fff;
@@ -52,10 +58,6 @@
     cursor: pointer;
 
     transition: 0.2s ease;
-}
-
-.black-container .confirm-dialog-box .buttons-container form {
-    display: inline;
 }
 
 .black-container .confirm-dialog-box .buttons-container .btn-negative {
@@ -73,4 +75,35 @@
 
 .black-container .confirm-dialog-box .buttons-container .btn-positive:hover {
     background-color: #a97347;
+}
+
+@media screen and (max-width: 790px) {
+    .black-container .confirm-dialog-box {
+        width: 60%;
+    }
+
+    .black-container .confirm-dialog-box .buttons-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .black-container .confirm-dialog-box .buttons-container button {
+        display: block;
+        width: 80%;
+        max-width: none;
+    }
+    
+    .black-container .confirm-dialog-box .buttons-container .btn-negative {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .black-container .confirm-dialog-box {
+        width: 80%;
+    }
 }
